@@ -1,13 +1,13 @@
 
 // get list of gemfury modules
 // for each module
-// 	get npm package versions
-// 	for each gemfury version
-// 		skip module if version exists
-// 		download tar file
-// 		clean package.json for re-release
-// 		publish tar file to npm
-// 	set npm latest to newest release between npm and gemfury
+//	 get npm package versions
+//	 for each gemfury version
+//		 skip module if version exists
+//		 download tar file
+//		 clean package.json for re-release
+//		 publish tar file to npm
+//	 set npm latest to newest release between npm and gemfury
 
 import {exec as _exec} from "child_process";
 import promisify from "es6-promisify";
@@ -66,8 +66,8 @@ export default async function({user,apikey}) {
 
 	function warn() {
 		progress.stream.clearLine();
-	    progress.stream.cursorTo(0);
-	    console.warn.apply(console, arguments);
+		progress.stream.cursorTo(0);
+		console.warn.apply(console, arguments);
 		progress.lastDraw = null;
 		progress.render(tokens);
 	}
@@ -149,7 +149,7 @@ export default async function({user,apikey}) {
 							if (data.scripts && data.scripts.prepublish) {
 								delete data.scripts.prepublish;
 							}
-							
+
 							let src = JSON.stringify(data, null, 2);
 							tarout.entry({
 								...header,

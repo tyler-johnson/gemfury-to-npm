@@ -9,6 +9,8 @@ node_js:
   - '5'
 before_install:
   - npm i -g npm@latest
+install:
+  - npm upgrade && npm prune && npm rebuild
 script:
   - npm run lint
   - npm run build
